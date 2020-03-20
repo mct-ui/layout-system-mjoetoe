@@ -295,3 +295,30 @@ a:focus {
         page-break-after: avoid;
     }
 }
+
+/*
+    Objects: Row
+    ---
+    Creates a horizontal row that stretches the viewport and adds padding around children
+*/
+
+.o-row {
+    padding: 24px 24px 0;
+    display: flow-root;
+}
+
+.o-row--primary {
+    background-color: orange;
+    color: white;
+}
+
+.o-row--dark {
+    background-color: gray;
+    color: white;
+}
+
+@media (min-width: 768px) {
+    .o-row--lg {
+        padding: 48px 48px 0;
+    }
+}
