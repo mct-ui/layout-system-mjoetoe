@@ -252,7 +252,9 @@ a:focus {
 
 /* Horizontal alignment modifiers*/
 
-.o-layout--justify-start {}
+.o-layout--justify-start {
+    flex-direction: row;
+}
 
 .o-layout--justify-end{
     flex-direction: row-reverse;
@@ -273,9 +275,15 @@ a:focus {
     justify-content: space-between;
 }
 
+.o-layout--justify-space-evenly {
+    justify-content: spa;
+}
+
 /* Vertical item alignment modifiers */
 
-.o-layout--align-start {}
+.o-layout--align-start {
+    align-items: flex-start;
+}
 
 .o-layout--align-end {
     align-items: flex-end;
@@ -285,31 +293,133 @@ a:focus {
     align-items: center;
 }
 
-.o-layout--align-baseline {}
+.o-layout--align-baseline {
+    align-items: baseline;
+}
 
 /* Vertical content alignment modifiers. Only work if there is one than one flex item */
 
-.o-layout--align-content-start {}
+.o-layout--align-content-start {
+    align-content: start;
+}
 
-.o-layout--align-content-end {}
+.o-layout--align-content-end {
+    align-content: end;
+}
 
-.o-layout--align-content-center {}
+.o-layout--align-content-center {
+    align-content: center;
+}
 
-.o-layout--align-content-space-around {}
+.o-layout--align-content-space-around {
+    align-content: space-around;
+}
 
-.o-layout--align-content-space-between {}
+.o-layout--align-content-space-between {
+    align-content: space-between;
+}
 
 
 /*------------------------------------*\
   #COMPONENTS
 \*------------------------------------*/
 
+/* 
+    Components: Author
+*/
+.c-author {
+    display: flex;
+    align-items: center;
+}
+
+.c-author__image{
+    width: 56px;
+    height: 56px;
+    border-radius: 100%;
+}
+
+.c-author__name,
+.c-author__meta {
+    margin-bottom: 0;
+}
+
+.c-author__meta {
+    font-size: 14px;
+    font-family: "Inter Web", "Helvetica Neue", Helvetica, arial, sans-serif;
+    line-height: 24px;
+}
+
+.c-author__name{
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.c-author__image{
+    width: 56px;
+    height: 56px;
+    border-radius: 100%;
+    margin-right: 16px;
+}
+
+
 /*
-    Component: Component name
-    ---
-    Component description
+    Components: Article
 */
 
+.c-article__header,
+.c-article__body {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.c-article__header {
+    padding: 24px 24px 0;
+}
+
+.c-article__body {
+    padding: 0 24px;
+}
+
+@media (min-width: 768px) {
+    .c-article__header{
+        padding: 48px 48px 24px;
+    }
+
+    .c-article__author {
+        padding-bottom: 24px;
+    }
+
+    .c-article__body {
+        padding: 24px 48px;
+    }
+}
+
+@media (min-width: 992px) {
+    .c-article__body{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .c-article__author {
+        
+        width: 25%;
+        padding-right: 24px;
+    }
+
+    .c-article__content {
+        width: 75%;
+    }
+}
+
+@media (min-width: 992px) {
+    .c-author{
+        display: block;
+    }
+
+    .c-author__image {
+        margin-bottom: 16px;
+    }
+}
 
 /*
     Component: layout block
